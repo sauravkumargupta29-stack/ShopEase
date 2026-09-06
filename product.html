@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Product Details - ShopEase
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            ShopEase
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#products">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#products">
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#contact">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <button
+                    class="wishlist-nav-btn"
+                    onclick="showWishlist()"
+                >
+                    ❤️ Wishlist
+                    <span id="wishlist-count">
+                        0
+                    </span>
+                </button>
+            </li>
+
+            <li id="auth-link">
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <button
+            class="cart-button"
+            id="cart-button"
+        >
+
+            🛒
+
+            <span id="cart-count">
+                0
+            </span>
+
+        </button>
+
+    </nav>
+
+
+    <!-- PRODUCT DETAILS -->
+
+    <section class="product-details">
+
+        <div
+            id="product-loading"
+            class="loading"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Loading product...
+            </p>
+
+        </div>
+
+
+        <div
+            id="product-error"
+            class="error-message"
+        >
+        </div>
+
+
+        <div
+            id="product-details-container"
+            class="details-container"
+        >
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>
+            ShopEase
+        </h2>
+
+        <p>
+            © 2026 ShopEase. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
