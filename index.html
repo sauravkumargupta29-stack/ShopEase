@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShopEase - Online Shopping</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            ShopEase
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#products">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="#products">
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <button
+                    class="wishlist-nav-btn"
+                    onclick="showWishlist()"
+                >
+                    ❤️ Wishlist
+                    <span id="wishlist-count">
+                        0
+                    </span>
+                </button>
+            </li>
+
+            <li id="auth-link">
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <button
+            class="cart-button"
+            id="cart-button"
+        >
+
+            🛒
+
+            <span id="cart-count">
+                0
+            </span>
+
+        </button>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                Welcome to ShopEase
+            </p>
+
+            <h1>
+                Shop Smart.
+                <br>
+                Live Better.
+            </h1>
+
+            <p>
+                Discover amazing products at amazing prices.
+            </p>
+
+            <button
+                class="hero-btn"
+                onclick="scrollToProducts()"
+            >
+                Shop Now
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section
+        class="products-section"
+        id="products"
+    >
+
+        <div class="section-heading">
+
+            <p>
+                OUR COLLECTION
+            </p>
+
+            <h2>
+                Explore Products
+            </h2>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="filters">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="🔎 Search products..."
+            >
+
+
+            <select id="category-filter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="electronics">
+                    Electronics
+                </option>
+
+                <option value="jewelery">
+                    Jewellery
+                </option>
+
+                <option value="men's clothing">
+                    Men's Clothing
+                </option>
+
+                <option value="women's clothing">
+                    Women's Clothing
+                </option>
+
+            </select>
+
+
+            <select id="sort-select">
+
+                <option value="default">
+                    Sort By
+                </option>
+
+                <option value="price-low">
+                    Price: Low to High
+                </option>
+
+                <option value="price-high">
+                    Price: High to Low
+                </option>
+
+                <option value="rating">
+                    Rating: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- LOADING -->
+
+        <div
+            id="loading"
+            class="loading"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Loading products...
+            </p>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="error-message"
+            class="error-message"
+        >
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div
+            id="products-container"
+            class="products-container"
+        >
+        </div>
+
+
+        <!-- LOAD MORE -->
+
+        <div class="load-more-container">
+
+            <button
+                id="load-more-btn"
+            >
+                Load More
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section
+        class="contact-section"
+        id="contact"
+    >
+
+        <p>
+            GET IN TOUCH
+        </p>
+
+        <h2>
+            Have Questions?
+        </h2>
+
+        <p>
+            We are here to help you.
+        </p>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+
+            <h2>
+                ShopEase
+            </h2>
+
+            <p>
+                Your simple and smart shopping destination.
+            </p>
+
+        </div>
+
+
+        <p class="copyright">
+            © 2026 ShopEase. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= CART MODAL ================= -->
+
+    <div
+        id="cart-modal"
+        class="modal"
+    >
+
+        <div class="modal-box">
+
+            <button
+                class="close-modal"
+                id="close-cart"
+            >
+                ✕
+            </button>
+
+
+            <h2>
+                🛒 Your Cart
+            </h2>
+
+
+            <div id="cart-items">
+            </div>
+
+
+            <div class="cart-total-row">
+
+                <strong>
+                    Total
+                </strong>
+
+                <strong>
+                    ₹<span id="cart-total">0</span>
+                </strong>
+
+            </div>
+
+
+            <button
+                class="checkout-btn"
+                onclick="goToCheckout()"
+            >
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= WISHLIST MODAL ================= -->
+
+    <div
+        id="wishlist-modal"
+        class="modal"
+    >
+
+        <div class="modal-box wishlist-box">
+
+            <button
+                class="close-modal"
+                onclick="closeWishlist()"
+            >
+                ✕
+            </button>
+
+
+            <h2>
+                ❤️ My Wishlist
+            </h2>
+
+
+            <div id="wishlist-items">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

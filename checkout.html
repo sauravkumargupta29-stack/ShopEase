@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Checkout - ShopEase
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+
+    <div class="checkout-page">
+
+        <div class="checkout-container">
+
+            <h1>
+                Checkout
+            </h1>
+
+
+            <form
+                class="checkout-form"
+                onsubmit="
+                    event.preventDefault();
+                    placeOrder();
+                "
+            >
+
+                <input
+                    type="text"
+                    id="full-name"
+                    placeholder="Full Name"
+                    required
+                >
+
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required
+                >
+
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="City"
+                    required
+                >
+
+
+                <input
+                    type="text"
+                    id="pin"
+                    placeholder="PIN Code"
+                    required
+                >
+
+
+                <textarea
+                    id="address"
+                    placeholder="Full Address"
+                    required
+                ></textarea>
+
+                <div
+                    class="payment-options"
+                    style="grid-column: 1 / -1;"
+                >
+
+                    <h3>
+                        Payment Method
+                    </h3>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Cash on Delivery"
+                            checked
+                        >
+
+                        Cash on Delivery
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="UPI"
+                        >
+
+                        UPI
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Card"
+                        >
+
+                        Card
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="place-order-btn"
+                    style="grid-column: 1 / -1;"
+                >
+                    Place Order
+                </button>
+
+            </form>
+
+
+            <div class="order-summary">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+
+                <div id="checkout-items">
+
+                </div>
+
+
+                <h3>
+
+                    Total:
+                    ₹<span id="checkout-total">
+                        0
+                    </span>
+
+                </h3>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+                ← Continue Shopping
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
