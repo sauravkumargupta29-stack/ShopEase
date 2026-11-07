@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+dist/
+build/
+*.log
+*.zip
+*.backup
+*.before-*
+*.reviews-backup
+*.order-tracking-backup
+*-backup
+*-backup
